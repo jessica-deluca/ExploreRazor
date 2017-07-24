@@ -1,0 +1,93 @@
+﻿@*Qu 1 : Write a razor markup to show output of sum of two variables as follows:
+Int num1, num2, result;
+Result=num1 + num2;
+Show result in <h2></h2> tag.*@
+
+@*@{
+    var num1 = 3;
+    var num2 = 15;
+    var result = num1 + num2;
+}
+
+<h2>@result</h2>*@
+
+
+@*Qu 1: Write a program to convert following datatypes:
+
+String “32” into int
+Float “12.52” into float
+Decimal “123.345” into decimal.
+You must check type of value before converting.*@
+
+@*@{
+    var number = "32";
+    int num;
+    if (number.IsInt() == true)
+    {
+        num = number.AsInt();
+        <h5>@num  is Integer Value</h5>
+    }
+    else
+    {
+    <h5>@number  is Not Integer</h5>
+    }
+}*@
+
+
+@*@{
+    var number = "12.52";
+    float num;
+    if (number.IsFloat() == true)
+    {
+        num = number.AsFloat();
+        <h5>@num  is Float</h5>
+    }
+    else
+    {
+        <h5>@number  is Not Float</h5>
+    }
+}*@
+
+@*@{
+    var number = "123.345";
+    decimal num;
+    if (number.IsDecimal() == true)
+    {
+        num = number.AsDecimal();
+        <h5>@num  is Decimal</h5>
+    }
+    else
+    {
+        <h5>@number  is Not Decimal</h5>
+    }
+}*@
+
+@*Qu 2: Write a program to find all the even number between 12 and 42 using looping and conditional statements.*@
+
+@*@{
+    int num;
+    string even;
+    for (int i = 12; i < 43; i++)
+    {
+        if (i % 2 == 0)
+        {
+            num = i;
+            even = "even";
+            <h5>@num @even</h5>
+        }
+    }
+
+}*@
+
+@*Qu 3: Write a program to display array on the screen. Array value should be like this.
+2,6,2,55,62,64,67*@
+
+@{
+    int[] array = { 2, 6, 2, 55, 62, 64, 67 };
+    foreach (int x in array)
+    {
+        <span>@x, </span>
+    }
+}
+
+@*Qu 4: Write a function for calculator with exception handling that returns division of two numbers.*@
